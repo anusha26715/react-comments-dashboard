@@ -1,0 +1,59 @@
+@import '../../styles/mixin.scss';
+
+.header-container{
+    padding: 12px 8%;
+    background-color: var(--color-main);
+    @include common-flex;
+    justify-content: space-between;
+    color: var(--color-white);
+    
+}
+
+.logo,
+.logo:visited,
+.logo:hover,
+.logo:active,
+.profile-data,
+.profile-data:visited,
+.profile-data:active,
+.profile-data:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo{
+    color: var(--color-white);
+    font-size: clamp(16px,99%,22px);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    @include common-flex;
+    max-width: 100px;
+    flex-shrink: 0;
+}
+
+.logo-img{
+    height: auto;
+    width: clamp(50px,3%,110px);
+}
+
+.logo>span{
+    display: inline-block
+}
+
+.profile-data{
+    @include common-flex;
+}
+
+.profile-data{
+    span:first-child{
+        background-color: var(--color-white);
+        border-radius: 50%;
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        @include common-flex;
+        margin-right: clamp(8px,1%,15px);
+        color: var(--color-main);
+        font-weight: bold;
+    } 
+}

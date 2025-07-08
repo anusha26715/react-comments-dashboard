@@ -1,0 +1,63 @@
+// let pages: number = 0;
+  // let currentPage: number = 1;
+
+  // function loadData(pageItems: number): void {
+  //   setPages(info.length / pageItems);
+  //   // console.log(pages);
+  //   setCurrentPage(1);
+  //   let temp = info.slice(0, pageItems);
+  //   setDisplay(temp);
+  // }
+
+  // function generatePaginationBtns(count: any) {
+  //   let temp: any[] = [];
+  //   for (let i = 0; i < count; i++) {
+  //     temp.push(i + 1);
+  //   }
+  //   return temp.map((ele: any) => {
+  //     return <button>{ele}</button>;
+  //   });
+  // }
+
+  // function nextPage() {
+  //   setCurrentPage(currentPage+1);
+  //   console.log(currentPage);
+    
+  //   let temp = info.slice((currentPage - 1) * perPage, currentPage * perPage);
+  //   console.log(temp);
+    
+  //   setDisplay(temp);
+  // }
+
+  // function prevPage() {
+  //   setCurrentPage(currentPage-1);
+  //   console.log(currentPage);
+    
+  //   let temp = info.slice((currentPage - 1) * perPage, currentPage * perPage);
+  //   console.log(temp);
+    
+  //   setDisplay(temp);
+  // }
+
+
+
+  {/* <div>
+          {1} - {perPage} of {info.length} items
+        </div>
+        <button onClick={() => prevPage()}>
+          <i className="bi bi-chevron-left"></i>
+        </button>
+        {generatePaginationBtns(pages)}
+        <button onClick={() => nextPage()}>
+          <i className="bi bi-chevron-right"></i>
+        </button>
+        <select
+          onChange={(event) => {
+            setPerPage(parseInt(event.target.value));
+            loadData(parseInt(event.target.value));
+          }}
+        >
+          <option>10 / Page</option>
+          <option>50 / Page</option>
+          <option>100 / Page</option>
+        </select> */}
