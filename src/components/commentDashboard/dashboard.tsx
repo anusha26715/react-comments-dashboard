@@ -39,7 +39,6 @@ function Dashboard() {
         });
         setAllComments(temp);
         localStorage.setItem('commentsData', JSON.stringify(temp));
-        console.log('Saved to localStorage:', temp);
       })
       .catch((err: any) =>
         console.error("unable to fetch data from comments api:", err)
