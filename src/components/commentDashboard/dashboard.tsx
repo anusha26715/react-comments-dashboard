@@ -1,4 +1,3 @@
-// import React from 'react'
 import { useState, useEffect } from "react";
 import type {eachComment } from "../../interface/types";
 import "./dashboard.scss";
@@ -11,7 +10,7 @@ type SortOrder = 'asc' | 'desc' | '';
 
 function Dashboard() {
   const [allComments,setAllComments] = useState<eachComment[]>([])
-  const [filteredComments, setFilteredComments] = useState<eachComment[]>([]);
+  const [filteredComments, setFilteredComments] = useState<eachComment[]>(allComments);
   const [search, setSearch] = useState('');
   const [pageSize, setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,6 +38,8 @@ function Dashboard() {
           });
         });
         setAllComments(temp);
+        localStorage.setItem('commentsData', JSON.stringify(temp));
+        console.log('Saved to localStorage:', temp);
       })
       .catch((err: any) =>
         console.error("unable to fetch data from comments api:", err)
@@ -46,7 +47,16 @@ function Dashboard() {
   }
 
   useEffect(() => {
-    fetchData();
+    //Load comments from local storage
+    const storedComments = localStorage.getItem('commentsData');
+    console.log('Loaded from localStorage:', storedComments);
+    if (storedComments) {
+      setAllComments(JSON.parse(storedComments));
+    } else {
+      fetchData();
+    }
+
+  // Restore UI state
     const stored = localStorage.getItem('commentState');
         if (stored) {
           const s = JSON.parse(stored);
@@ -58,6 +68,8 @@ function Dashboard() {
         }
   }, []);
 
+
+  // sorting logic
 useEffect(() => {
     let result = [...allComments];
 
@@ -116,7 +128,8 @@ useEffect(() => {
     }
   };
 
-  
+  localStorage.setItem('paginated', JSON.stringify(paginated));
+  localStorage.getItem('paginated');
 
   return (
     <main>
@@ -150,7 +163,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
-
+      {/* table section */}
       <section className="mt-4">
         <div className="table-container">
           <table className="comment-table">

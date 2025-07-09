@@ -19,7 +19,7 @@ function Header({ user }: HeaderProps) {
     : 'NA';
 
   return (
-    <div className="header-container">
+    <header className="header-container">
       <Link to="/dashboard" className="logo">
         <img src="./src/assets/swift_logo.webp" alt="Swift" title="Swift Company" className="logo-img"/>
         <span>WIFT</span>
@@ -28,7 +28,7 @@ function Header({ user }: HeaderProps) {
         <span>{initials}</span>
         <span>{user?.name}</span>
       </Link>
-    </div>
+    </header>
   )
 }
 
